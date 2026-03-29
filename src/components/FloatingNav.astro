@@ -8,7 +8,7 @@ interface NavItem {
 }
 
 const { activeTab } = Astro.props as { activeTab: NavItem['id'] };
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const navItems: NavItem[] = [
   { id: 'calculator', label: 'Calculator', href: baseUrl },
